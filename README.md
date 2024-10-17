@@ -33,24 +33,14 @@ To run this application, ensure you have the following installed:
 
 This will start three services:
 .**nginx**: The reverse proxy server.
+
 .**node-app**: The Node.js application that interacts with the MySQL database.
+
 .**db**: The MySQL database service.
 
 3. Access the application:
 
   Once all services are up, the application will be accessible at **http://localhost:8080**. Each time you refresh the page, a random name will be inserted into the MySQL database, and the full list of names will be displayed.
-
-**Project Structure**
-
-├── db-init/                       # Directory for database initialization scripts
-├── nginx/                         # NGINX configuration files
-│   └── default.conf               # NGINX server config
-├── node-app/                      # Node.js application directory
-│   ├── app.js                     # Main Node.js application file
-│   ├── Dockerfile                 # Dockerfile for building the Node.js app
-│   └── package.json               # Node.js dependencies
-├── docker-compose.yml             # Docker Compose configuration
-└── README.md                      # Project documentation
 
 **How It Works**
 
@@ -64,9 +54,9 @@ This will start three services:
 
 **Customization**
 
-  .**Modify the list of random names:** The list of names is defined in the **node-app/app.js** file. You can modify the **names** array to include more or different names.
+  . **Modify the list of random names:** The list of names is defined in the **node-app/app.js** file. You can modify the **names** array to include more or different names.
   
-  .**Database configuration:** The MySQL connection configuration (host, user, password, database) is also defined in **node-app/app.js** and can be adjusted as needed.
+  . **Database configuration:** The MySQL connection configuration (host, user, password, database) is also defined in **node-app/app.js** and can be adjusted as needed.
 
 **Stop the Services**
 
