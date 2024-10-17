@@ -1,0 +1,13 @@
+{
+    "name": "reverse-proxy-app",
+    "version": "1.0.0",
+    "description": "Node.js app with MySQL database",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "mysql2": "^2.2.5"
+    }
+}
