@@ -1,3 +1,4 @@
+version: '3.8'  
 services:
   nginx:
     image: nginx:alpine
@@ -22,7 +23,8 @@ services:
       - ./node-app:/usr/src/app
       - node_modules:/usr/src/app/node_modules
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
   db:
     image: mysql:8.0
@@ -37,6 +39,11 @@ services:
       - ./db-init:/docker-entrypoint-initdb.d
     networks:
       - app-network
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -proot --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 networks:
   app-network:
